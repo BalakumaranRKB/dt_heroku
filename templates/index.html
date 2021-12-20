@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Providing the chances of survival of Passenger aboard the titanic ship based on input provided from the user</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+
+        <!--
+            <input type="number" step = "any" name="Pclass" id="Pclass" placeholder="Enter the class in which the passenger travelled :" style="width: 290px;"><br>
+        -->
+
+            <label for="Pclass">Choose  the class in which the Passenger travelled  :</label>
+            <select name="Pclass" id="Pclass">
+            <option value = 1>1</option>
+            <option value = 2>2</option>
+            <option value = 3>3</option>
+            </select><br>
+
+
+            <input type="number" step = "any" name="Age" id="Age" placeholder="Enter the age of the passenger" style="width: 200px;"><br>
+            <input type="number" step = "any" name="SibSp" id="SibSp" placeholder="Enter the number of siblings or Spouse onboard" style="width: 315px;"><br>
+            <input type="number" step = "any" name="Parch" id="Parch" placeholder="Number of Parents or Children onboard" step="any" style="width: 280px;"><br>
+            <input type="number" step = "any" name="Fare" id="Fare"placeholder="Enter the Fare which the Passenger would have paid" style="width: 350px;"><br>
+
+            <label for="male">Is the passenger a male :</label>
+            <select name="male" id="male">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+
+
+
+
+
+            <input type="submit" value="Predict" style="width: 200px;">
+        </form>
+    </div>
+</div>
+{% endblock %}
